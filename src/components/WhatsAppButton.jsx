@@ -40,34 +40,40 @@ const WhatsAppButton = () => {
                 initial={{ opacity: 0, y: 20, scale: 0.8 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 20, scale: 0.8 }}
-                className="mb-4 bg-white dark:bg-dark-800 rounded-2xl shadow-2xl p-6 max-w-xs border border-gray-200 dark:border-dark-700"
+                className="mb-4 glass rounded-2xl p-6 max-w-xs border"
+                style={{ 
+                  backgroundColor: 'hsl(var(--card))', 
+                  borderColor: 'hsl(var(--border))',
+                  color: 'hsl(var(--card-foreground))'
+                }}
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: 'hsl(var(--secondary))' }}>
                       <MessageCircle className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 dark:text-white">WhatsApp Support</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">0727676338</p>
+                      <h3 className="font-semibold" style={{ color: 'hsl(var(--foreground))' }}>WhatsApp Support</h3>
+                      <p className="text-sm" style={{ color: 'hsl(var(--muted-foreground))' }}>0727676338</p>
                     </div>
                   </div>
                   <button
                     onClick={toggleExpanded}
-                    className="p-1 rounded-full hover:bg-gray-100 dark:hover:bg-dark-700 transition-colors"
+                    className="p-1 rounded-full transition-colors hover:bg-muted"
                   >
                     <X className="h-4 w-4 text-gray-500" />
                   </button>
                 </div>
                 
-                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                <p className="text-sm mb-4" style={{ color: 'hsl(var(--muted-foreground))' }}>
                   Hi! How can we help you with your ICT needs today?
                 </p>
                 
                 <div className="space-y-2">
                   <button
                     onClick={handleWhatsAppClick}
-                    className="w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center space-x-2"
+                    className="w-full py-2 px-4 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center space-x-2 text-white"
+                    style={{ backgroundColor: 'hsl(var(--secondary))' }}
                   >
                     <MessageCircle className="h-4 w-4" />
                     <span>Start Chat</span>
@@ -75,7 +81,11 @@ const WhatsAppButton = () => {
                   
                   <button
                     onClick={() => window.open('tel:+254727676338', '_self')}
-                    className="w-full bg-gray-100 dark:bg-dark-700 hover:bg-gray-200 dark:hover:bg-dark-600 text-gray-700 dark:text-gray-300 py-2 px-4 rounded-lg font-medium transition-colors duration-200"
+                    className="w-full py-2 px-4 rounded-lg font-medium transition-colors duration-200 hover:bg-muted"
+                    style={{ 
+                      backgroundColor: 'hsl(var(--muted))', 
+                      color: 'hsl(var(--muted-foreground))' 
+                    }}
                   >
                     Call Now
                   </button>
@@ -92,21 +102,29 @@ const WhatsAppButton = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <div className="w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full shadow-lg flex items-center justify-center transition-colors duration-300">
+            <div className="w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-colors duration-300"
+                 style={{ backgroundColor: 'hsl(var(--secondary))' }}>
               <MessageCircle className="h-7 w-7 text-white" />
             </div>
             
             {/* Pulse Animation */}
             <motion.div
-              className="absolute inset-0 bg-green-500 rounded-full"
+              className="absolute inset-0 rounded-full"
+              style={{ backgroundColor: 'hsl(var(--secondary))' }}
               animate={{ scale: [1, 1.2, 1], opacity: [0.7, 0, 0.7] }}
               transition={{ repeat: Infinity, duration: 2 }}
             />
             
             {/* Tooltip */}
-            <div className="absolute right-16 top-1/2 transform -translate-y-1/2 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-3 py-2 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+            <div className="absolute right-16 top-1/2 transform -translate-y-1/2 px-3 py-2 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
+                 style={{ 
+                   backgroundColor: 'hsl(var(--popover))',
+                   color: 'hsl(var(--popover-foreground))',
+                   border: '1px solid hsl(var(--border))'
+                 }}>
               Chat with us on WhatsApp
-              <div className="absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-l-gray-900 dark:border-l-gray-100 border-t-4 border-t-transparent border-b-4 border-b-transparent"></div>
+              <div className="absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-t-4 border-t-transparent border-b-4 border-b-transparent"
+                   style={{ borderLeftColor: 'hsl(var(--popover))' }}></div>
             </div>
           </motion.button>
         </motion.div>

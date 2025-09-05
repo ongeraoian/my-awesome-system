@@ -53,7 +53,7 @@ const Home = () => {
       </video>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-900/80 via-primary-800/70 to-dark-900/80 z-10"></div>
+      <div className="absolute inset-0 hero-gradient z-10"></div>
 
       {/* Content */}
       <motion.div
@@ -65,7 +65,7 @@ const Home = () => {
         <motion.div variants={itemVariants} className="mb-8">
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6">
             <span className="block">Multside Technologies</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-200">
+            <span className="block text-gradient">
               Innovative ICT & Security Solutions
             </span>
           </h1>
@@ -97,7 +97,7 @@ const Home = () => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-colors duration-300"
+            className="btn-whatsapp flex items-center justify-center space-x-2"
           >
             <MessageCircle className="h-5 w-5" />
             <span>WhatsApp</span>
@@ -112,7 +112,7 @@ const Home = () => {
               whileHover={{ scale: 1.05 }}
               className="glass text-center p-6 rounded-xl"
             >
-              <stat.icon className="h-8 w-8 text-primary-400 mx-auto mb-3" />
+              <stat.icon className="h-8 w-8 mx-auto mb-3" style={{ color: 'hsl(var(--primary))' }} />
               <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
               <div className="text-gray-300">{stat.label}</div>
             </motion.div>
