@@ -1,0 +1,73 @@
+/* Banner Section */
+.banner {
+  font-family: 'Arial, sans-serif';
+  position: relative;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Video Background */
+.videoBackground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Overlay Section */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 8, 12, 0.464); /* Semi-transparent overlay */
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Content Section */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+/* Style for text content */
+.textContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Gradient Text Effect */
+.gradientText {
+  font-size: 4.5rem; /* Make heading bigger */
+  font-weight: bold;
+  margin-bottom: 1px;
+  
+}
+
+/* Style for tagline */
+.tagline {
+  font-size: 2rem; /* Make tagline bigger */
+  margin-top: 0.5px; /* Move tagline closer to heading */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gradientText {
+    font-size: 3rem;
+  }
+
+}

@@ -1,0 +1,31 @@
+/* Ensure the page takes the full viewport height */
+.page-container {
+    display: flex;
+    flex-direction: column; /* Stack navbar, content, and footer */
+    min-height: 100vh; /* Full viewport height */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff; /* Optional: Add a background color */
+  }
+  
+  /* Center the content vertically and horizontally */
+  .content-container {
+    flex: 1; /* Allow the content to grow and fill available space */
+    display: flex;
+    flex-direction: column; /* Stack heading and paragraph */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Optional: Center text */
+    padding: 20px; /* Add some padding around content */
+  }
+  
+  /* Footer (if you add one later) */
+  .footer {
+    background-color: #f1f1f1; /* Light gray background */
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #333;
+  }
+  

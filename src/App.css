@@ -1,0 +1,109 @@
+/* General body styles */
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling by default across the whole page */
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure body takes the full height */
+  background-color: #ffffff; /* Optional: background color for the whole page */
+}
+
+/* Layout Container for the whole page */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the app container takes the full height of the screen */
+}
+
+/* Section styles */
+section {
+  padding: 0; /* Remove default padding to avoid gaps */
+  min-height: 100vh; /* Ensure each section occupies the full height of the viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  background-color: transparent; /* Optional background color for each section */
+  margin: 0; /* Ensure no margins between sections */
+  box-sizing: border-box; /* Ensures padding/margin are calculated correctly */
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(247, 244, 244, 0.974); /* White with 70% opacity for translucent effect */
+  padding: 15px 20px;
+  color: rgb(62, 58, 58);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  backdrop-filter: blur(5px); /* Apply blur effect to the background */
+  transition: background-color 0.3s ease-in-out; /* Smooth transition for background color change */
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  color: rgb(30, 32, 99);
+  margin-left: 20px;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.navbar-links li {
+  margin-left: 20px;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: rgb(14, 14, 14);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.navbar-links li a:hover {
+  color: #1a2f72; /* Change hover color */
+}
+
+/* Add some margin to the top of each section so that content isn't hidden by the navbar */
+section {
+  margin-top: 70px; /* Adjust depending on the height of your navbar */
+}
+
+footer {
+  background-color: #333;
+  color: rgb(76, 69, 69);
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Optional: Styling for smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+      padding: 10px 20px;
+  }
+
+  .navbar-links {
+      flex-direction: column; /* Stack navbar links on smaller screens */
+  }
+
+  .navbar-links li {
+      margin-left: 0;
+      margin-top: 10px;
+  }
+}

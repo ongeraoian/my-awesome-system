@@ -1,0 +1,131 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(108, 106, 106, 0.077); /* Translucent background */
+  padding: 5px 10px;
+  color: rgb(21, 28, 96);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo Section */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Desktop Links */
+.navbar-links {
+  display: flex; /* Show links normally on desktop */
+  gap: 15px;
+  list-style: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar-links li {
+  margin: 0 10px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: rgb(36, 22, 90);
+  font-size: 1rem;
+  position: relative; /* For hover effect */
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #151c55; /* Green hover color */
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 100%;
+  background: rgb(23, 20, 86);
+  transform: scaleX(0); /* Initially hidden */
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-links a:hover::after {
+  transform: scaleX(1); /* Full width on hover */
+}
+
+/* Hamburger Menu for Mobile Screens */
+.hamburger {
+  display: none; /* Hide by default */
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: rgb(16, 15, 15);
+  z-index: 1100; /* Ensure hamburger is above other elements */
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  /* Mobile navbar links - hidden by default */
+  .navbar-links {
+    display: none; /* Hide links on mobile by default */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust the top position based on navbar height */
+    left: 0;
+    width: 100%;
+    background: rgba(108, 106, 106, 0.9);
+    gap: 10px;
+    padding: 20px;
+    transform: translateY(-100%); /* Initially off-screen */
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* Show the links when mobile menu is open */
+  .navbar-links.open {
+    display: flex; /* Display the links */
+    transform: translateY(0); /* Slide into view */
+    opacity: 1; /* Fully visible */
+  }
+
+  /* Show hamburger menu on small screens */
+  .hamburger {
+    display: block; /* Show the hamburger on mobile screens */
+  }
+
+  /* Mobile link styling */
+  .navbar-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  /* Hover effect for mobile links */
+  .navbar-links a:hover {
+    color: #16196a;
+  }
+
+  /* Hover effect for mobile links */
+  .navbar-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 100%;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Hover effect on mobile */
+  .navbar-links a:hover::after {
+    transform: scaleX(1); /* Full width on hover */
+  }
+}

@@ -1,0 +1,112 @@
+.aboutContainer {
+  background-color: #170271; /* Base purple color */
+  background: linear-gradient(180deg, #4311a7, #1b63a2); /* Gradient effect */
+  color: white;
+  min-height: 100vh; /* Full-screen height */
+  display: flex;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center; /* Center content horizontally */
+  text-align: center;
+  padding: 40px; /* Reduced padding */
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent scrollbars during animation */
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  max-width: 800px;
+  padding: 20px; /* Reduced padding */
+  margin: 0 auto; /* Center content horizontally */
+  z-index: 9;
+  position: relative;
+  text-align: left;
+
+  /* Animation */
+  animation: slideInFromLeft 1.5s ease-out forwards;
+  opacity: 0;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 1px 0; /* Adjusted margins */
+  color: #fff;
+  text-align: center;
+
+  /* Fade-in animation */
+  animation: fadeIn 1s ease-out 1s forwards;
+  opacity: 0;
+}
+
+.paragraph {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin: 1px 0; /* Reduced spacing between paragraphs */
+  color: #dcdcdc;
+  text-align: justify;
+
+  /* Animation */
+  animation: slideInFromLeft 1.5s ease-out forwards;
+  opacity: 0;
+}
+
+.paragraph:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.paragraph:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Slide-in animation */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Fade-in animation for heading */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .paragraph {
+    font-size: 1rem;
+    margin: 10px 0; /* Reduce spacing further for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .paragraph {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}

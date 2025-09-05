@@ -1,0 +1,143 @@
+/* Container for the Service page */
+.container {
+  width: 100%;
+  margin: auto;
+  padding: 100px;
+  background: linear-gradient(to right, #fdf5e6, #1b63a2);
+  border: none;
+}
+
+/* Title Styling */
+.title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Grid Layout for Service Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Individual Card Styling */
+.card {
+  background: rgb(6, 92, 157);
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+  min-height: 350px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  background: white;
+  color: black;
+  transform: scale(1.05);
+}
+
+/* Ensure text inside the card changes color on hover */
+.card:hover .cardTitle,
+.card:hover .cardDescription {
+  color: black !important;
+}
+
+/* Card Image Styling */
+.cardImage {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background-color: white;
+}
+
+/* Card Title Styling */
+.cardTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+/* Card Description Styling */
+.cardDescription {
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+/* Remove link underline and ensure it inherits text color */
+.cardLink {
+  text-decoration: none;
+  display: block;
+}
+
+/* Ensure card link text inherits color changes */
+.cardLink:hover {
+  color: inherit;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .card {
+    min-height: 300px;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+  }
+
+  .cardDescription {
+    font-size: 14px;
+  }
+
+  .cardImage {
+    height: 120px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 50px 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 280px;
+    padding: 10px;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+  }
+
+  .cardDescription {
+    font-size: 12px;
+  }
+
+  .cardImage {
+    height: 100px;
+  }
+}

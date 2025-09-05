@@ -1,0 +1,113 @@
+/* Ensure the page takes the full viewport height */
+.carTracking-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #07488a, #87cefa);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Headings */
+.carTracking-title {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.carTracking-blocks-container h2 {
+  color: #0077cc;
+  font-size: 2rem;
+  margin-top: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.carTracking-blocks-container h3 {
+  color: #0f0f0f;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Paragraphs */
+.carTracking-blocks-container p {
+  color: #101010;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.carTracking-blocks-container p strong {
+  color: #131313;
+}
+
+/* Image Container */
+.carTracking-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.carTracking-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Blocks Container */
+.carTracking-blocks-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  color: #090909;
+}
+
+.carTracking-block {
+  background: white;
+  color: #090909;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 300px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.carTracking-left-block, .carTracking-middle-block, .carTracking-right-block {
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .carTracking-title {
+    font-size: 2rem;
+  }
+
+  .carTracking-blocks-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .carTracking-blocks-container h3 {
+    font-size: 1.4rem;
+  }
+
+  .carTracking-blocks-container p {
+    font-size: 1rem;
+  }
+
+  .carTracking-blocks-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carTracking-block {
+    max-width: 100%;
+  }
+}
